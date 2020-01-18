@@ -1,0 +1,4 @@
+*.cpython-36.pyc
+config.py
+*.csv
+*.ipynb
