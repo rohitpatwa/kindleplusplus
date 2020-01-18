@@ -23,10 +23,7 @@ We are currently in the phase of brainstorming and implementing ideas. Your sugg
 
 
 ## TODO
-1. Add the following tables.
-  -> Authors
-  -> Users
-  -> Genres
+1. Add the following tables : [Authors, Users, Genres]
   
 2. Parse "your clippings" file.
 
