@@ -31,5 +31,5 @@ def sendMail(sub, body):
 	server.starttls()
 	server.login(mailcfg['fromaddr'], mailcfg['psswd'])
 	text = msg.as_string()
-	server.sendmail(fromaddr, toaddr, text)
+	server.sendmail(fromaddr, toaddr.split(','), text)
 	server.quit()
