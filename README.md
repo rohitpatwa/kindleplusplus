@@ -1,4 +1,4 @@
-# kindleplusplus
+# kindle++
 Revesit the wise/impactful lines you read from a book
 
 Ever happend that you read a wonderful book sometime ago, that book had a great positive impact on you but, with time you forgot it's teachings you wish you could have rememembered for ever. If yes, you're not alone. All of us go through similar situations more often than we think. 
