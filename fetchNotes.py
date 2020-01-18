@@ -8,9 +8,9 @@ mail= imaplib.IMAP4_SSL('imap.gmail.com')
 mail.login(mailcfg['fromaddr'],mailcfg['psswd'])
 mail.select("Inbox")
 typ, msgs = mail.search(None, 'Subject', '"{}"'.format('Your Kindle Notes From'))
-msgs = msgs[0].split() 
+msgs = msgs[0].split()
 
-for num in msgs:
+for num in msgs[-3:]:
     raw_email = mail.fetch(num,'(RFC822)')
     raw_email_str = raw_email[1][0][1].decode('UTF-8')
     email_message = email.message_from_string(raw_email_str)
