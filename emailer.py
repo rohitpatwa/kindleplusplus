@@ -5,13 +5,14 @@ from random import randint
 
 def get_random_note():
 	
-	count = mongo.db['notes'].count_documents({})
+	count = mongo.db['notes'].find({'circulate':True}).count()
 	rand = randint(0,count-1)
-	cursor = mongo.db['notes'].find().skip(rand).limit(1)
+	cursor = mongo.db['notes'].find({'circulate':True}).skip(rand).limit(1)
 	for d in cursor:
 		return d
 
 mongo = MongoObject()
 random_note = get_random_note()
-book_name = mongo.db['books'].find_one({'_id':random_note['book_id']})['book_name']
-mailer(book_name, random_note['note'])
+doc = mongo.db['books'].find_one({'_id':random_note['book_id']})
+book_name, authors = doc['book_name'], doc['authors']
+mailer(book_name, authors, random_note['note'])

@@ -3,17 +3,14 @@ import re
 import hashlib
 from pymongo import MongoClient
 from config import mongo
-
-# create Mongo connection
-client = MongoClient()
-client.list_database_names()
-db = client['kindle']
+import numpy as np
 
 # parse csv
 
 class Parser():
-	def __init__(self, path):
-		self.notes = pd.read_csv(path)
+	def __init__(self, path=None):
+		if path:
+			self.notes = pd.read_csv(path)
 
 
 	def parse(self):
@@ -22,7 +19,7 @@ class Parser():
 
 	def get_book_info(self):
 		book_name = self.notes.loc[0][0]
-		book_hash = hashlib.md5(book_name.encode('UTF-8')).hexdigest()
+		book_hash = hashlib.md5(book_name.lower().encode('UTF-8')).hexdigest()
 		
 		authors = self.notes.loc[1][0]
 		authors = self.clean_authors(authors)
@@ -59,6 +56,9 @@ class Parser():
 		for i in highlights.index:
 			row = highlights.loc[i]
 			page_no, note = row[1], row[3]
+
+			if not isinstance(note, str) or not note.strip():
+				continue
 			note_hash = self.get_note_hash(note)
 
 			res.append({
@@ -66,6 +66,7 @@ class Parser():
 					'book_id':self.book_info['_id'],
 					'note':note,
 					'page_no':page_no,
+					'curculate':True,
 					'significance':0,
 					'last_sent' : 0,
 					'contributors' : [],
@@ -76,22 +77,23 @@ class Parser():
 
 class MongoObject():
 	def __init__(self):
+		# create Mongo connection
 		client = MongoClient(mongo['serveraddr'])
 		self.db = client[mongo['dbname']]
 
 	def insert_document(self, doc, coll):
 	    if coll=='books':
-	        resp = db[coll].find_one({'_id':doc['_id']})
+	        resp = self.db[coll].find_one({'_id':doc['_id']})
 	        if not resp:
-	            db[coll].insert_one(doc)
+	            self.db[coll].insert_one(doc)
 	        else:
 	            contributors = resp['contributors']
 	            # print(contributors)
 	            # TODO : add user to the list of contributors if the user is a new contributor
 	    else:
-	        resp = db[coll].find_one({'_id':doc['_id']})
+	        resp = self.db[coll].find_one({'_id':doc['_id']})
 	        if not resp:
-	            db[coll].insert_one(doc)
+	            self.db[coll].insert_one(doc)
 	        else:
 	            contributors = resp['contributors']
 	            # print(contributors)

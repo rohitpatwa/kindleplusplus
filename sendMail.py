@@ -14,7 +14,7 @@ from email.mime.text import MIMEText
 from config import mailcfg 
 
  
-def sendMail(sub, body):
+def sendMail(book_name, authors, note):
 	fromaddr = f'{mailcfg["fromname"]}<{mailcfg["fromaddr"]}>'
 						 
 	toaddr = mailcfg['toaddr']
@@ -22,10 +22,10 @@ def sendMail(sub, body):
 	msg['From'] = fromaddr
 	msg['To'] = toaddr
 
-	sub = sub.split()[0] if len(sub.split()[0]) > 4 else sub[:15] + '...'
-	msg['Subject'] = f"Highlight of the day! | {sub}"
+	book_name = book_name.split()[0] if len(book_name.split()[0]) > 4 else book_name[:15] + '...'
+	msg['Subject'] = f"Highlight of the day! | {book_name}"
 	 
-	body = '<font face="Courier New, Courier, monospace">' + body + '</font>'
+	body = '<font face="Courier New, Courier, monospace">' + note + '</font>'
 	msg.attach(MIMEText(body,'html'))
 	server = smtplib.SMTP('smtp.gmail.com', 587)
 	server.starttls()
