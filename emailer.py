@@ -14,5 +14,5 @@ def get_random_note():
 mongo = MongoObject()
 random_note = get_random_note()
 doc = mongo.db['books'].find_one({'_id':random_note['book_id']})
-book_name, authors = doc['book_name'], doc['authors']
+book_name, authors = doc['book_name'], ','.join(doc['authors'])
 mailer(book_name, authors, random_note['note'])
