@@ -17,7 +17,7 @@ def sendMail(book_name, authors,note):
     msg = MIMEMultipart()
     msg['From'] = fromaddr
     sb = book_name.split()[0] if len(book_name.split()[0]) > 4 else book_name[:15] + '...'
-    msg['Subject'] = f"Highlight of the day!| {sb}"
+    msg['Subject'] = f"Highlight of the day | {sb}"
     new_body=""
     with open('trial.txt',"r") as f:
         data=f.readlines()
