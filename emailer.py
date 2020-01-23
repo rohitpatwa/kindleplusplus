@@ -5,9 +5,9 @@ from random import randint
 
 def get_random_note():
 	
-	count = mongo.db['notes'].find({'circulate':True}).count()
+	count = mongo.db['notes'].find().count()
 	rand = randint(0,count-1)
-	cursor = mongo.db['notes'].find({'circulate':True}).skip(rand).limit(1)
+	cursor = mongo.db['notes'].find().skip(rand).limit(1)
 	for d in cursor:
 		return d
 
