@@ -1,6 +1,7 @@
 from sendMail import sendMail as mailer
 from notesParser import MongoObject
 from random import randint
+from ner import ner
 
 
 def get_random_note():
