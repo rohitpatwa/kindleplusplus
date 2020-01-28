@@ -10,11 +10,13 @@ import numpy as np
 class Parser():
 	def __init__(self, path=None):
 		if path:
+			self.path = path
 			self.notes = pd.read_csv(path)
 
 
 	def parse(self):
 		self.book_info = self.get_book_info()
+		self.user = self.process_user()
 		self.highlights = self.process_highlights()
 
 	def get_book_info(self):
@@ -69,10 +71,31 @@ class Parser():
 					'curculate':True,
 					'significance':0,
 					'last_sent' : 0,
-					'contributors' : [],
+					'contributors' : [self.user['_id']],
 					'genre' : []
 				})
 		return res
+
+	def process_user(self):
+		if '___' in self.path:
+			user_info = re.sub(r'.*___(.*)', r'\1', self.path)
+			name, email = user_info.split('<')
+			name = re.sub(r'\s+', ' ', name)
+			email = re.sub(r'(.*)>.*', r'\1', email)
+			email_hash = hashlib.md5(email.lower().encode('UTF-8')).hexdigest()
+			
+			user = {
+				'_id':email_hash,
+				'email':email,
+				'name':name,
+				'contributions':[self.book_info['_id']],
+				'subscriptions':[],
+				'reading_quality': 0,
+				'frequency':0
+			}
+			return user
+		return {}
+
 
 
 class MongoObject():
@@ -82,18 +105,34 @@ class MongoObject():
 		self.db = client[mongo['dbname']]
 
 	def insert_document(self, doc, coll):
-	    if coll=='books':
-	        resp = self.db[coll].find_one({'_id':doc['_id']})
-	        if not resp:
-	            self.db[coll].insert_one(doc)
-	        else:
-	            contributors = resp['contributors']
-	            # print(contributors)
-	            # TODO : add user to the list of contributors if the user is a new contributor
-	    else:
-	        resp = self.db[coll].find_one({'_id':doc['_id']})
-	        if not resp:
-	            self.db[coll].insert_one(doc)
-	        else:
-	            contributors = resp['contributors']
-	            # print(contributors)
+		if coll=='books':
+			resp = self.db[coll].find_one({'_id':doc['_id']})
+			if not resp:
+				self.db[coll].insert_one(doc)
+			else:
+				contributors = resp['contributors']
+				# print(contributors)
+				# TODO : add user to the list of contributors if the user is a new contributor
+
+		elif coll=='users':
+			resp = self.db[coll].find_one({'_id':doc['_id']})
+			if not resp:
+				self.db[coll].insert_one(doc)
+			else:
+				contributions = list(set(resp['contributions'] + doc['contributions']))
+				self.db[coll].update_one({'_id':doc['_id']}, { "$set": { "contributions": contributions } })
+		
+		elif coll=="notes":
+			resp = self.db[coll].find_one({'_id':doc['_id']})
+			if not resp:
+				self.db[coll].insert_one(doc)
+			else:
+				updated_contributors = list(set(resp['contributors'] + doc['contributors']))
+				if len(updated_contributors)>len(resp['contributors']):
+					
+					self.db[coll].update_one({'_id':doc['_id']}, { "$set": { "contributors": updated_contributors } })
+					
+					significance = resp['significance']
+					self.db[coll].update_one({'_id':doc['_id']}, { "$set": { "significance": significance+1 } })
+				
+				
