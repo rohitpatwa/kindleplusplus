@@ -11,5 +11,7 @@ mongo = MongoObject()
 
 mongo.insert_document(parser.book_info, 'books')
 
+mongo.insert_document(parser.user, 'users')
+
 for h in parser.highlights:
     mongo.insert_document(h, 'notes')
