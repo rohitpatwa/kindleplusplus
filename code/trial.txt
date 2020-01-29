@@ -1,0 +1,56 @@
+<html>
+<title>Kindle ++</title>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway'>
+<style>
+body,h1,h2,h3,h4,h5 {font-family: 'Raleway', sans-serif}
+body{background-color:#f1f1f1}
+.content {margin-left:auto;margin-right:auto;max-width:980px}
+.center {display:inline-block;width:auto;text-align:center}
+.padd32{padding-top:32px;padding-bottom:32px}
+.row{content:'';display:table;clear:both}
+.col{float:left;width:100%}
+.card-4{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+.white{color:#000;background-color:#fff}
+.opacity{opacity:0.60}
+.dark-grey{color:#fff;background-color:#616161}
+.margin-top{padding-top:32px;padding-bottom:32px}
+.tag{background-color:#000;color:#fff;display:inline-block;padding-left:8px;padding-right:8px;text-align:center}
+.container{padding:0.01em 16px}
+.container{padding:0.01em 16px}
+</style>
+<body>
+<center>
+<atii class='content center'>
+<header class='container center padd32'> 
+<h1><b>Thought of the day</b></h1>
+<p>Welcome to <span class='tag'>Kindle ++</span></p>
+</header>
+<atii class='row'>
+<atii class='col l12 s12'>
+<atii class='card-4 center white'>
+<img src='https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-865109088-1548970937.jpg?crop=1.00xw:0.752xh;0,0.248xh&resize=480:*' alt='Nature' style='width:80%'>
+<atii class='container'>
+<h1><b>
+Book Name
+</b></h1>
+<h2 style="border-bottom: 1px dotted black">by <span>
+Author name
+</span></h2>
+</atii>
+<atii class='container'>
+<p><font size="4"><i>
+insert quote here!
+</i></font></p>
+</atii>
+</atii>
+</atii>
+<footer class='container dark-grey padd32 margin-top'>
+<br>
+<br>
+<p>Designed By <a href='https://movie-fanatic-res.cloudinary.com/iu/s--ZJ1VpdVi--/t_teaser_wide/cs_srgb,f_auto,fl_strip_profile.lossy,q_auto:420/v1364990925/taj-mahal-badalandabad.jpg' target='_blank'>Rohit</a></p>
+</footer>
+</center>
+</body>
+</html>
