@@ -2,3 +2,4 @@
 *config*
 *.csv
 *.ipynb
+*logs.txt
