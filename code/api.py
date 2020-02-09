@@ -37,6 +37,7 @@ def subscribe():
 
 		name = data['name']
 		email = data['email']
+		books = data['book_ids']
 
 		try:
 			name = name.strip()
@@ -47,9 +48,10 @@ def subscribe():
 					"name": name,
 					"email" : email,
 					"contributions" : [],
-					"subscriptions" : [],
+					"subscriptions" : books,
 					'reading_quality': 0,
-					'frequency':0
+					'frequency':0,
+					'active':1
 				}
 			db['users'].insert_one(doc)
 			return jsonify({'message': 'User added successfully!', 'status_code':200})
@@ -59,8 +61,34 @@ def subscribe():
 				return jsonify({'error': 'User already exists', 'status_code':101})
 			return jsonify({'error': 'Unable to add user, please insert data correctly', 'status_code':101})
 
+
+@app.route('/unsubscribe', methods=['GET', 'POST']) 
+def unsubscribe(): 
+	""" 
+		Upload image with base64 
+	"""
+
+	data = request.get_json()
+
+	if data is None:
+		print("No valid request body, json missing!")
+		return jsonify({'error': 'No valid request body, json missing!', 'status_code':101})
+	else:
+
+		email = data['email']
+		email = email.lower().strip()
+		email_hash = hashlib.md5(email.encode('UTF-8')).hexdigest() 
+		try:
+			db['users'].update_one({"_id":email_hash}, {"$set":{"active":0}})
+			return jsonify({'message': 'User unsubscribed successfully', 'status_code':200})
+		
+		except Exception as e:
+			if '_id_ dup key' in str(e):
+				return jsonify({'error': 'User already exists', 'status_code':101})
+			return jsonify({'error': 'Unable to add user, please insert data correctly', 'status_code':101})
+
 			
-app.run()
+app.run(host="0.0.0.0")
 
 
 
