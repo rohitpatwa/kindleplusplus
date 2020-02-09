@@ -17,14 +17,17 @@ def sendMail(book_name, authors, note, test=False):
     if test: toaddr = "patwa.r@husky.neu.edu"
     else: toaddr = mailcfg['toaddr']
     
+
     msg = MIMEMultipart()
     msg['From'] = fromaddr
     
     sb = book_name.split()[0] if len(book_name.split()[0]) > 6 else book_name[:15] + '...'
     msg['Subject'] = f"Highlight of the day | {sb}"
-    
+    import os
+
     with open('trial.txt',"r") as f:
         data=f.readlines()
+
     data[35]=book_name
     data[38]=authors
     data[43]=note
