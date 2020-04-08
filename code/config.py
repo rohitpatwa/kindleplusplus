@@ -14,13 +14,13 @@ mailcfg = {
 					jain95aastha@gmail.com, \
 					jainrachita15@gmail.com, \
 					biva.kishore@gmail.com",
-	"psswd" : "badalandabad"
+	"psswd" : "<>"
 }
 
 
 
 # mongo connection
 mongo = {
-	"serveraddr":"mongodb+srv://rohit:badalandabad@rohit-mongo-scv25.mongodb.net/test?retryWrites=true&w=majority",
+	"serveraddr":"mongodb+srv://rohit:<>@rohit-mongo-scv25.mongodb.net/test?retryWrites=true&w=majority",
 	"dbname":"kindle",
 }
