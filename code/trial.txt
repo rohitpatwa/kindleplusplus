@@ -30,7 +30,7 @@ body{background-color:#f1f1f1}
 <atii class='row'>
 <atii class='col l12 s12'>
 <atii class='card-4 center white'>
-<img src='https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-865109088-1548970937.jpg?crop=1.00xw:0.752xh;0,0.248xh&resize=480:*' alt='Nature' style='width:80%'>
+<img src='https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' alt='Nature' style='width:80%'>
 <atii class='container'>
 <h1><b>
 Book Name
@@ -49,7 +49,7 @@ insert quote here!
 <footer class='container dark-grey padd32 margin-top'>
 <br>
 <br>
-<p>Designed By <a href='https://movie-fanatic-res.cloudinary.com/iu/s--ZJ1VpdVi--/t_teaser_wide/cs_srgb,f_auto,fl_strip_profile.lossy,q_auto:420/v1364990925/taj-mahal-badalandabad.jpg' target='_blank'>Rohit</a></p>
+<p>Designed By <a href='https://media-exp1.licdn.com/dms/image/C5103AQE-xSmhvq8b1Q/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=mAJaS2kWpjv7Bko3IuVt0oql3Q9wHofdBu5neCDJ5uo' target='_blank'>Rohit</a></p>
 </footer>
 </center>
 </body>
