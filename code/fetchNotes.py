@@ -27,6 +27,7 @@ for num in msgs:
 			continue
 		fileName = part.get_filename()
 		if bool(fileName) and 'csv' in fileName:
+
 			fileName = fileName.replace('.csv', '') + f'___{sender_info}' + '.csv'
 			filePath = os.path.join('../data', fileName)
 			if not os.path.isfile(filePath) :
@@ -34,5 +35,5 @@ for num in msgs:
 				fp.write(part.get_payload(decode=True))
 				fp.close()
 			subject = str(email_message).split("Subject: ", 1)[1].split("\nTo:", 1)[0]
-			print('Downloaded "{file}" from email titled "{subject}"'.format(file=fileName, subject=subject))
+			print('Downloaded : "{file}"'.format(file=fileName))
 
