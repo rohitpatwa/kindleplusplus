@@ -24,7 +24,7 @@ body{background-color:#f1f1f1}
 <center>
 <atii class='content center'>
 <header class='container center padd32'> 
-<h1><b>Thought of the day</b></h1>
+<h1><b>Highlight of the day</b></h1>
 <p>Welcome to <span class='tag'>Kindle ++</span></p>
 </header>
 <atii class='row'>
@@ -49,7 +49,7 @@ insert quote here!
 <footer class='container dark-grey padd32 margin-top'>
 <br>
 <br>
-<p>Designed By <a href='https://media-exp1.licdn.com/dms/image/C5103AQE-xSmhvq8b1Q/profile-displayphoto-shrink_200_200/0?e=1587600000&v=beta&t=mAJaS2kWpjv7Bko3IuVt0oql3Q9wHofdBu5neCDJ5uo' target='_blank'>Rohit</a></p>
+<p>Designed By <a href='https://photos.angel.co/users/6698079-large?1500790508' target='_blank'>Rohit</a></p>
 </footer>
 </center>
 </body>

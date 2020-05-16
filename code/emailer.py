@@ -21,17 +21,18 @@ args = parser.parse_args()
 
 
 
-def get_random_note():
+def get_random_note(test):
 	query = {'last_sent':{'$lte': int(time()) - 1296000}}
-	count = mongo.db['notes'].find(query).count()
+	count = mongo.db['notes'].count_documents(query)
 	rand = randint(0,count-1)
 	cursor = mongo.db['notes'].find(query).skip(rand).limit(1)
 	for d in cursor:
-		mongo.update_last_sent(d['_id'])
+		if not test:
+			mongo.update_last_sent(d['_id'])
 		return d
 
 mongo = MongoObject()
-random_note = get_random_note()
+random_note = get_random_note(args.test)
 book_doc = mongo.db['books'].find_one({'_id':random_note['book_id']})
 book_name, authors = book_doc['book_name'], ','.join(book_doc['authors'])
 mailer(book_name, authors, random_note['note'], args.test)
