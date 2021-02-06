@@ -11,7 +11,7 @@ We created a small service, developed by novice programmers, which takes your ki
 
 We are currently in the phase of brainstorming and implementing ideas. Your suggestions and reviews will be highly appreaciated.  
 
-![Flow diagram](https://github.com/rohitpatwa/plant-pathology/blob/main/media/flow.png)
+![Flow diagram](https://github.com/rohitpatwa/kindleplusplus/blob/master/media/flow.png)
 
 1. Go to your book on your Amazon kindle device.
 2. Click on options, select notes option, click on export notes.
