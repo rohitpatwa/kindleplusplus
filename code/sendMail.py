@@ -14,10 +14,10 @@ from config import mailcfg
 def sendMail(book_name, authors, note, test=False):
     fromaddr = f'{mailcfg["fromname"]}<{mailcfg["fromaddr"]}>'		 
     
-    if test: toaddr = "patwa.r@husky.neu.edu"
+    if test: toaddr = "patwa.r@northeastern.edu"
     else: toaddr = mailcfg['toaddr']
     
-
+    
     msg = MIMEMultipart()
     msg['From'] = fromaddr
     

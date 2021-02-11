@@ -1,5 +1,5 @@
 *.pyc
-code/config.py
 *.csv
 *.ipynb
 *logs.txt
+.vscode/settings.json
