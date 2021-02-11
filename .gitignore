@@ -1,5 +1,5 @@
 *.pyc
-*config*
+code/config.py
 *.csv
 *.ipynb
 *logs.txt
