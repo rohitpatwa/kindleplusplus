@@ -18,7 +18,7 @@ We always welcome ideas and feature requests.
 
 1. Open your book on your Amazon kindle device
 2. Click on **Options > Notes > Export Notes**
-3. You will receive an email from amazon titled **"Your Kindle Notes from <book name>"**. Forward that email to **"kinghuskier@gmail.com"**
+3. You will receive an email from amazon titled **"Your Kindle Notes from \<book name\>"**. Forward that email to **"kinghuskier@gmail.com"**
 4. You're all set
 5. For any customizations requirements, please send an email to "kinghuskier@gmail.com" with "kindleplusplus" in the subject
 
