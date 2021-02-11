@@ -1,5 +1,7 @@
 # kindle++
 
+![Kindle diagram](https://github.com/rohitpatwa/kindleplusplus/tree/master/media/Kindle-111.jpg)
+
 Revesit the wise/impactful lines you read from a book.
 
 Ever happend that you read a wonderful book sometime ago, that book had a positive impact on you but, with time you forgot it's teachings you wish you could have rememembered. If yes, you're not alone. All of us go through similar situations more often than we think.
@@ -24,7 +26,7 @@ We always welcome ideas and feature requests.
 
 Here is the step by step flow of how it works internally.
 
-![Flow diagram](https://github.com/rohitpatwa/plant-pathology/blob/main/media/flow.png)
+![Flow diagram](https://github.com/rohitpatwa/kindleplusplus/tree/master/media/flow.png)
 
 ## Technologies and Services Used
 
