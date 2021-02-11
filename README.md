@@ -1,36 +1,49 @@
 # kindle++
-Revesit the wise/impactful lines you read from a book
 
-Ever happend that you read a wonderful book sometime ago, that book had a great positive impact on you but, with time you forgot it's teachings you wish you could have rememembered for ever. If yes, you're not alone. All of us go through similar situations more often than we think. 
+Revesit the wise/impactful lines you read from a book.
 
-Try to remember your favourite book. Now list down the 10 things which you appreciated the most in that book. Now repeat the activity for top 10 of your favorite books. Exhausting right?
+Ever happend that you read a wonderful book sometime ago, that book had a positive impact on you but, with time you forgot it's teachings you wish you could have rememembered. If yes, you're not alone. All of us go through similar situations more often than we think.
 
-Personal use was the starting motivation for this project. Upon sureveying random people, we came to realize that this problem is far more frequent that we ever expected. 
+Try to remember your favourite book. Now list down 10 things which you appreciated the most in that book. Now repeat the activity for top 10 of your favorite books. Exhausting right?
 
-We created a small service, developed by novice programmers, which takes your kindle highlights and stores them in a database. Based on your selected frequency, we send you emails with your highlights with contextual information. 
+Personal use was the starting motivation for this project. Upon sureveying random people, we came to realize that this problem is far more frequent that we ever expected.
 
-We are currently in the phase of brainstorming and implementing ideas. Your suggestions and reviews will be highly appreaciated.  
+We created a small service, which takes your kindle highlights and stores them in a database. Based on your selected frequency, we send you emails with your highlights with contextual information.
 
-![Flow diagram](https://github.com/rohitpatwa/kindleplusplus/blob/master/media/flow.png)
+We always welcome ideas and feature requests.
 
-1. Go to your book on your Amazon kindle device.
-2. Click on options, select notes option, click on export notes.
-3. You will receive an email from amazon containing 2 attachments. Forward that email to "kinghuskier@gmail.com".
-4. You're all set.
-5. For any customizations requirements, please send an email to "kinghuskier@gmail.com" with "kindleplusplus" in the subject. 
+## How to use
 
+1. Open your book on your Amazon kindle device
+2. Click on **Options > Notes > Export Notes**
+3. You will receive an email from amazon titled **"Your Kindle Notes from <book name>"**. Forward that email to **"kinghuskier@gmail.com"**
+4. You're all set
+5. For any customizations requirements, please send an email to "kinghuskier@gmail.com" with "kindleplusplus" in the subject
+
+## Internal Flow
+
+Here is the step by step flow of how it works internally.
+
+![Flow diagram](https://github.com/rohitpatwa/plant-pathology/blob/main/media  /flow.png)
+
+## Technologies and Services Used
+
+* Python3
+* MongoDB
+* NLTK
+* Flask
+* Heroku
 
 ## TODO
-1. Add the following tables : [Authors, Users, Genres]
+
+1. Add a UI for users to sign-up easily
   
-2. Parse "your clippings" file.
+2. Give users the capability to customize their email preferences
 
-3. Add the last sent feature to make sure same note is not going out frequently.
+3. Scrape the book cover when parsing the notes
 
-4. Add contributors and subscribers feature.
+4. Add book cover to the email
 
-5. Improve the merging books logic.
+## Author
 
-6. Improve the merging notes logic and add the significance feature.
-
-7. Add a layer of sentiment analysis
+* **Rohit Patwa** [\[LinedIn\]](https://www.linkedin.com/in/rohitpatwa/)

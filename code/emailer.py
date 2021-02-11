@@ -42,16 +42,14 @@ def fire():
 
 if __name__=="__main__":
 	files = os.listdir()
-	if 'emailer.py' in files:
+	if 'mailer_logs.txt' in files:
 		f = open('mailer_logs.txt', 'r')
-		# x = f.readlines()[-1][14:-1]
-		# print(x)
 		last_sent = datetime.strptime(f.readlines()[-1][14:-1], '%Y-%m-%d %H:%M:%S')
 		now = datetime.now()
-		if (now-last_sent).total_seconds()/3600 > 24:
+		if (now-last_sent).total_seconds()/3600 > 23:
 			fire()
 		else:
 			pass
 
-
-	
+	else:
+		fire()
