@@ -24,7 +24,7 @@ We always welcome ideas and feature requests.
 
 Here is the step by step flow of how it works internally.
 
-![Flow diagram](https://github.com/rohitpatwa/plant-pathology/blob/main/media  /flow.png)
+![Flow diagram](https://github.com/rohitpatwa/plant-pathology/blob/main/media/flow.png)
 
 ## Technologies and Services Used
 
