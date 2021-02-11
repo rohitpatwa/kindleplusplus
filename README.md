@@ -1,6 +1,6 @@
 # kindle++
 
-![Kindle diagram](https://github.com/rohitpatwa/kindleplusplus/tree/master/media/Kindle-111.jpg)
+![Kindle diagram](https://github.com/rohitpatwa/kindleplusplus/blob/main/media/Kindle-111.jpg)
 
 Revesit the wise/impactful lines you read from a book.
 
@@ -26,7 +26,7 @@ We always welcome ideas and feature requests.
 
 Here is the step by step flow of how it works internally.
 
-![Flow diagram](https://github.com/rohitpatwa/kindleplusplus/tree/master/media/flow.png)
+![Flow diagram](https://github.com/rohitpatwa/kindleplusplus/blob/main/media/flow.png)
 
 ## Technologies and Services Used
 
