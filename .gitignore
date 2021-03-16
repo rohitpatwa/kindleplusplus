@@ -3,3 +3,4 @@
 *.ipynb
 *logs.txt
 .vscode/settings.json
+code/config.py
